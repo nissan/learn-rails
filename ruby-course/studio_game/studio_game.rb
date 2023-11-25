@@ -1,23 +1,36 @@
-puts "Let's play a game!\n#{'🚀'*25}\n3\n2\n1"
-player_name = "finn"
-player_health = 60
-# puts "#{player_name}'s health is #{player_health*3/9.0}."
-# puts "#{player_name} has a health of #{player_health}."
-# puts "#{player_name.upcase} has a health of #{player_health}."
-# puts "#{player_name} has a health of #{player_health}.".center(50, "*")
-# puts "#{player_name.ljust(30, ".")} #{player_health} health"
-# puts "#{player_name.capitalize} has a health of #{player_health} health"
-# puts "#{player_name.strip.capitalize} has a health of #{player_health} health"
 
-# puts player_health.to_s.reverse
-# puts player_health.to_s.reverse.to_i
-# puts player_health.pow(2)
+class Player
+    def initialize(name, health=100)
+        @name = name.capitalize
+        @health = health
+    end
 
-def get_player_info(name:, health:100)
-    "#{name.capitalize} has a health of #{health}."
+    def to_s = "I'm #{@name} with a health of #{@health}."
+
+
+    def boost
+        @health += 15
+        "#{@name} got a boost!"
+    end
+
+    def drain
+        @health -= 10
+        "#{@name} got drained!"
+    end
+
 end
 
-puts get_player_info(name:player_name, health:player_health)
-puts get_player_info(name:"larry", health:60)
-puts get_player_info(name:"curly")
-puts get_player_info(name:"moe", health:125)
+player_1 = Player.new("finn", 60)
+player_2 = Player.new("lucy", 90)
+player_3 = Player.new("Jase")
+player_4 = Player.new("Alex", 125)
+
+puts player_1
+puts player_2
+puts player_3
+puts player_4
+
+puts player_4.drain
+puts player_4
+puts player_4.boost
+puts player_4
